@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+  <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/bulma.min.css">
+  <script src="http://127.0.0.1:8000/static/js/jquery-3.6.0.min.js"></script>
+  <script src="http://127.0.0.1:8000/static/js/main.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  
+    <title>Product </title>
+    
+</head>
+<body>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://127.0.0.1:8000/">
+        <img src="https://cdn.scrapfly.io/0.0.117/www/public/img/logo.png?version=0.0.117">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  <div id="navigation" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/" class="navbar-item">Home</a>
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">Paging</a>
+      <div class="navbar-dropdown">
+        <a href="/products-1.html" class="navbar-item">Classic</a>
+        <a href="/products-spa.html" class="navbar-item">Infinite</a>
+        
+      </div>
+    </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Learn Web Scraping</a>
+          <div class="navbar-dropdown">
+            <a href="https://scrapfly.io/blog/scraping-using-browsers/" class="navbar-item">Scraping Using Browsers</a>
+            <a href="https://scrapfly.io/blog/how-to-scrape-without-getting-blocked-tutorial/" class="navbar-item">Web Scraper Blocking</a>
+            <a href="https://scrapfly.io/blog/parsing-html-with-xpath/" class="navbar-item">Parsing HTML with XPATH</a>
+            <a href="https://scrapfly.io/blog/parsing-html-with-css/" class="navbar-item">Parsing HTML with CSS</a>
+            <hr class="navbar-divider">
+            <a href="https://scrapfly.io/blog/web-scraping-with-python/" class="navbar-item">Python</a>
+            <a href="https://scrapfly.io/blog/web-scraping-with-selenium-and-python/" class="navbar-item">Python+Selenium</a>
+            <hr class="navbar-divider">
+            <a href="https://scrapfly.io/blog/web-scraping-with-nodejs/" class="navbar-item">NodeJS</a>
+            <a href="https://scrapfly.io/blog/web-scraping-with-puppeteer-and-nodejs/" class="navbar-item">NodeJS+Puppteer</a>
+          </div>
+        </div>
+        <div class="buttons">
+          <a href="https://scrapfly.io/" class="button is-primary"> <strong>Try ScrapFly</strong> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <div class="container content">
+  
+    <article class="box product">
+        <h3><a href="http://127.0.0.1:8000//product/shoes-2.html">Flippity Flip Flops</a></h3>
+        <div class="price">23.99</div>
+        <div class="short-description">The pool slide cousins of our bestselling surfer-girl flip-flops, these are sporty-casual, superlight, and equally waterproof. Underneath there's the same iQushion™ midsole tech: ergonomically shaped, high-rebound, air-foam cushioning – with impact pillows front and back, and natural arch support – for walk-all-day comfort. On top, wide beach-friendly rubber straps with subtle texture and an embossed logo. Ultra-comfortable slides that'll instantly freshen up your warm weather wardrobe. Dive in!</div>
+    </article>
+
+  </div>
+</body>
+</html>
