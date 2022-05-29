@@ -1,0 +1,4 @@
+{% import 'macros/products.html' as product_render %}
+{% for product in products %}
+    {{ product_render.preview(product, base_url, page_number + 1, loop.last)}}
+{% endfor%}

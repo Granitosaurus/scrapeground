@@ -1,0 +1,9 @@
+<nav role="navigation" class="pagination is-centered is-small">
+    <a class="pagination-previous {%if page_number < 2 %}is-disabled"{%else%}" href="/products-{{page_number-1}}.html"{%endif%}><</a>
+    <a class="pagination-next {%if page_number >= page_total%}is-disabled"{%else%}" href="/products-{{page_number+1}}.html"{%endif%}>></a>
+    <ul class="pagination-list">
+    {% for page in range(1, page_total+1) %}
+        <li><a {% if loop.index != page_number %}class="pagination-link" href="/products-{{page}}.html"{%else%}class="pagination-link is-current"{% endif %}>{{page}}</a></li>
+    {% endfor%}
+    </ul>
+</nav>

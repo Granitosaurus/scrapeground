@@ -1,0 +1,57 @@
+[{
+        "id": "shoes-1",
+        "title": "Comfy Shoes 3000",
+        "price": 33.44,
+        "description": "The Comfy Shoes 3000 is an updated version of the good ol' classic 2000's version. Loved by many - wanted by everybody.",
+        "thumbnail": "/static/media/sneakers.webp"
+    },
+    {
+        "id": "shoes-2",
+        "title": "Comfy Shoes 2000",
+        "price": 23.44,
+        "description": "The Comfy Shoes 2000 is the good ol' classic for those living still nostalgic for the worse times, when people wore shoes instead of robo-legs.",
+        "thumbnail": "/static/media/sneakers2.webp"
+    },
+    {
+        "id": "beanie-1",
+        "title": "Cat Ear Beanie",
+        "price": 13.00,
+        "description": "Ever wanted to be a cat? Now's your chance! Click that order button and start practicing your meows!",
+        "thumbnail": "/static/media/beanie.webp"
+    },
+    {
+        "id": "shampoo-1",
+        "title": "Purple Flower Shampoo",
+        "price": 14.14,
+        "description": "Purple Flower blend shampoo is perfect for dry hair as it contains collection of hand picked amino acids that bind with non-natural oils for fresh and modern look.",
+        "thumbnail": "/static/media/shampoo.webp"
+    },
+    {
+        "id": "pomgranade-1",
+        "title": "Refreshing Mystery Fruit",
+        "price": 2.99,
+        "description": "Tired of shopping? Take a break, take a bite, take an order of the most awesome and refreshing fruit out there - the ultimate, red pomegranate!",
+        "thumbnail": "/static/media/pomegranate.webp"
+    },
+    {
+        "id": "perfume-1",
+        "title": "Sweet Orange Mist",
+        "price": 44.99,
+        "description": "Perfume mist straight from freshly squeezed oranges collected from the mountains of mountain-city. Hand pressed, FairTrade™",
+        "thumbnail": "/static/media/perfume.webp"
+    },
+    {
+        "id": "socks-1",
+        "title": "Endurance Socks + Solar Powered Dryer",
+        "price": 88.99,
+        "description": "This combo package of Endurance Socks™ which comes with a classic warranty of 10 years is a perfect match with Solar Powered Dryer technology. Ready for a hike of your lifetime?",
+        "thumbnail": "/static/media/perfume.webp"
+    },
+    {
+        "id": "shoes-2",
+        "title": "Flippity Flip Flops",
+        "price": 23.99,
+        "description": "The pool slide cousins of our bestselling surfer-girl flip-flops, these are sporty-casual, superlight, and equally waterproof. Underneath there's the same iQushion™ midsole tech: ergonomically shaped, high-rebound, air-foam cushioning – with impact pillows front and back, and natural arch support – for walk-all-day comfort. On top, wide beach-friendly rubber straps with subtle texture and an embossed logo. Ultra-comfortable slides that'll instantly freshen up your warm weather wardrobe. Dive in!",
+        "thumbnail": "/static/media/flip-flops.webp"
+    }
+]
