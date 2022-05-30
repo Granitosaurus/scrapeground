@@ -9,7 +9,7 @@
   <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
   <script src="https://unpkg.com/mustache@latest"></script>
   
-    <title>Products page 1}</title>
+    <title>Product List</title>
     
 </head>
 <body>
@@ -62,41 +62,30 @@
   </div>
 </nav>
   <div class="container content">
-  
+   
     <article class="box tutorial">
-        <details><summary><h3>What is Classic Paging?</h3></summary>
+        <details><summary><h3>What is Infinite Button Paging?</h3></summary>
         <p>
-            Classic paging is when pure HTML is used to link to other pages. 
-            In this example, you can see all page links listed at the top/bottom as well as next/previous page links.
+           Infinite paging is when javascript is used to page results by appending next page results when users clicks a "Load More" button.
+           You can see in this example more results appear every time we click "Load More" button.
         </p>
         <p>
-            This paging method is great for web scraping as we can scrape all pages concurrently 
-            since total page or total result count is known.
+           In this example, next page results are retrieved through a background request. 
+           In the network inspector we can see request being triggered every time we click the "Load More" button
+           That being said, infinite pagination can also use cached results hidden in HTML body under script tags though that's quite rare. 
+           In that case "Load More" button would retrieve results from state/cache rather than a request.
+        </p>
+        <p>
+           To scrape infinite paging we need to reverse engineer background requests and replicate them in our scraper. 
+           We can do that by using Network Inspector, for more on that see this tutorial 
+           <a href="https://scrapecrow.com/reverse-engineering-intro.html">Reverse Engineering Intro</a>
+        </p>
+        <p>
+           One negative of infinite paging is that paging end is unknown. 
+           Meaning, we cannot schedule requests for all pages concurrently making scraping of this architecture much slower.
         </p>
         </details>
     </article>
-    <div class="paging-total">Total results: 50</div>
-    <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous is-disabled"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//paging/products-2.html">></a>
-    <ul class="pagination-list">
-    
-        <li><a class="pagination-link is-current">1</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-2.html">2</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-3.html">3</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-4.html">4</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-5.html">5</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-6.html">6</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-7.html">7</a></li>
-    
-    </ul>
-</nav>
     
     
         
@@ -251,27 +240,7 @@
     </article>
 
     
-    <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous is-disabled"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//paging/products-2.html">></a>
-    <ul class="pagination-list">
-    
-        <li><a class="pagination-link is-current">1</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-2.html">2</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-3.html">3</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-4.html">4</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-5.html">5</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-6.html">6</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-7.html">7</a></li>
-    
-    </ul>
-</nav>
+    <button class="button is-medium" hx-get="http://granitosaur.us/scrapeground/paging/infinite/2-button.html" hx-swap="outerHTML">Load More</button>
 
   </div>
 </body>
