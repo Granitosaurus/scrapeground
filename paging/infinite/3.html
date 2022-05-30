@@ -1,89 +1,6 @@
-<!DOCTYPE html>
-<html class="has-navbar-fixed-top">
-<head>
-  <link rel="stylesheet" href="http://granitosaur.us/scrapeground/static/css/bulma.min.css">
-  <script src="http://granitosaur.us/scrapeground/static/js/jquery-3.6.0.min.js"></script>
-  <script src="http://granitosaur.us/scrapeground/static/js/main.js"></script>
-  <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-  
-    <title>Products page 3}</title>
+
+
     
-</head>
-<body>
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://scrapfly.io/">
-        <img src="https://cdn.scrapfly.io/0.0.117/www/public/img/logo.png?version=0.0.117">
-      </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  <div id="navigation" class="navbar-menu">
-    <div class="navbar-start">
-      <a href="http://granitosaur.us/scrapeground/" class="navbar-item">Home</a>
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link">Paging</a>
-      <div class="navbar-dropdown">
-        <a href="http://granitosaur.us/scrapeground/products-1.html" class="navbar-item">Classic</a>
-        <a href="http://granitosaur.us/scrapeground/products-spa.html" class="navbar-item">Infinite</a>
-        
-      </div>
-    </div>
-    </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Learn Web Scraping</a>
-          <div class="navbar-dropdown">
-            <a href="https://scrapfly.io/blog/scraping-using-browsers/" class="navbar-item">Scraping Using Browsers</a>
-            <a href="https://scrapfly.io/blog/how-to-scrape-without-getting-blocked-tutorial/" class="navbar-item">Web Scraper Blocking</a>
-            <a href="https://scrapfly.io/blog/parsing-html-with-xpath/" class="navbar-item">Parsing HTML with XPATH</a>
-            <a href="https://scrapfly.io/blog/parsing-html-with-css/" class="navbar-item">Parsing HTML with CSS</a>
-            <hr class="navbar-divider">
-            <a href="https://scrapfly.io/blog/web-scraping-with-python/" class="navbar-item">Python</a>
-            <a href="https://scrapfly.io/blog/web-scraping-with-selenium-and-python/" class="navbar-item">Python+Selenium</a>
-            <hr class="navbar-divider">
-            <a href="https://scrapfly.io/blog/web-scraping-with-nodejs/" class="navbar-item">NodeJS</a>
-            <a href="https://scrapfly.io/blog/web-scraping-with-puppeteer-and-nodejs/" class="navbar-item">NodeJS+Puppteer</a>
-          </div>
-        </div>
-        <div class="buttons">
-          <a href="https://scrapfly.io/" class="button is-primary"> <strong>Try ScrapFly</strong> </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-  <div class="container content">
-  
-    <div class="paging-total">Total results: 50</div>
-    <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//products-2.html"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//products-4.html">></a>
-    <ul class="pagination-list">
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-1.html">1</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-2.html">2</a></li>
-    
-        <li><a class="pagination-link is-current">3</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-4.html">4</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-5.html">5</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-6.html">6</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-7.html">7</a></li>
-    
-    </ul>
-</nav>
-    
-    
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -101,8 +18,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -120,8 +37,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -139,8 +56,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -158,8 +75,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -177,8 +94,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -196,8 +113,8 @@
         </div>
     </article>
 
+
     
-        
     <article class="box product"  >
         <div class="columns">
             <div class="column is-2">
@@ -215,9 +132,9 @@
         </div>
     </article>
 
+
     
-        
-    <article class="box product"  >
+    <article class="box product"  hx-get="http://granitosaur.us/scrapeground/paging/infinite/4.html" hx-trigger="revealed" hx-swap="afterend" >
         <div class="columns">
             <div class="column is-2">
                 <figure class="image is-128x128">
@@ -234,29 +151,3 @@
         </div>
     </article>
 
-    
-    <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//products-2.html"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//products-4.html">></a>
-    <ul class="pagination-list">
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-1.html">1</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-2.html">2</a></li>
-    
-        <li><a class="pagination-link is-current">3</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-4.html">4</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-5.html">5</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-6.html">6</a></li>
-    
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-7.html">7</a></li>
-    
-    </ul>
-</nav>
-
-  </div>
-</body>
-</html>

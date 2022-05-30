@@ -2,9 +2,12 @@
 <html class="has-navbar-fixed-top">
 <head>
   <link rel="stylesheet" href="http://granitosaur.us/scrapeground/static/css/bulma.min.css">
+  <link rel="stylesheet" href="http://granitosaur.us/scrapeground/static/css/main.css">
   <script src="http://granitosaur.us/scrapeground/static/js/jquery-3.6.0.min.js"></script>
   <script src="http://granitosaur.us/scrapeground/static/js/main.js"></script>
   <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
   
     <title>Products page 2}</title>
     
@@ -27,8 +30,8 @@
     <div class="navbar-item has-dropdown is-hoverable">
       <a class="navbar-link">Paging</a>
       <div class="navbar-dropdown">
-        <a href="http://granitosaur.us/scrapeground/products-1.html" class="navbar-item">Classic</a>
-        <a href="http://granitosaur.us/scrapeground/products-spa.html" class="navbar-item">Infinite</a>
+        <a href="http://granitosaur.us/scrapeground/paging/products-1.html" class="navbar-item">Classic</a>
+        <a href="http://granitosaur.us/scrapeground/paging-infinite.html" class="navbar-item">Infinite</a>
         
       </div>
     </div>
@@ -59,25 +62,37 @@
 </nav>
   <div class="container content">
   
+    <article class="box tutorial">
+        <details><summary><h3>What is Classic Paging?</h3></summary>
+        <p>
+            Classic paging is when pure HTML is used to link to other pages. 
+            In this example, you can see all page links listed at the top/bottom as well as next/previous page links.
+        </p>
+        <p>
+            This paging method is great for web scraping as we can scrape all pages concurrently 
+            since total page or total result count is known.
+        </p>
+        </details>
+    </article>
     <div class="paging-total">Total results: 50</div>
     <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//products-1.html"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//products-3.html">></a>
+    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//paging/products-1.html"><</a>
+    <a class="pagination-next " href="http://granitosaur.us/scrapeground//paging/products-3.html">></a>
     <ul class="pagination-list">
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-1.html">1</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-1.html">1</a></li>
     
         <li><a class="pagination-link is-current">2</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-3.html">3</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-3.html">3</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-4.html">4</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-4.html">4</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-5.html">5</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-5.html">5</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-6.html">6</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-6.html">6</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-7.html">7</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-7.html">7</a></li>
     
     </ul>
 </nav>
@@ -236,23 +251,23 @@
 
     
     <nav role="navigation" class="pagination is-centered is-small">
-    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//products-1.html"><</a>
-    <a class="pagination-next " href="http://granitosaur.us/scrapeground//products-3.html">></a>
+    <a class="pagination-previous " href="http://granitosaur.us/scrapeground//paging/products-1.html"><</a>
+    <a class="pagination-next " href="http://granitosaur.us/scrapeground//paging/products-3.html">></a>
     <ul class="pagination-list">
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-1.html">1</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-1.html">1</a></li>
     
         <li><a class="pagination-link is-current">2</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-3.html">3</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-3.html">3</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-4.html">4</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-4.html">4</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-5.html">5</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-5.html">5</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-6.html">6</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-6.html">6</a></li>
     
-        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//products-7.html">7</a></li>
+        <li><a class="pagination-link" href="http://granitosaur.us/scrapeground//paging/products-7.html">7</a></li>
     
     </ul>
 </nav>
