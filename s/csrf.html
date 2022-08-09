@@ -82,7 +82,7 @@
     <pre id="results"></pre>
 </div>
 <p>If we click "search" and take a look at the <b>Devtools Network</b> tab of our devtools we can see that this request sent an <code>x-csrf-token</code> header:</p>
-<img src="/static/media/csrf-inspector.webp">
+<img src="http://granitosaur.us/scrapeground/static/media/csrf-inspector.webp">
 <p>When scraping this hidden API without csrf token we'd receive a 403 response:</p>
 <details><summary>In ScrapFly SDK</summary>
 </pre>
@@ -94,9 +94,9 @@
 <input type="hidden" name="csrf-token" value="" />
 <p>To replicate this behavior in our scraper we need to:</p>
 <ol>
-    <li>Retrieve HTML page with hidden token (this page)</li>
-    <li>Parse the html and find the token</li>
-    <li>Include token in our hidden API requests</li>
+<li>Retrieve HTML page with hidden token (this page)</li>
+<li>Parse the html and find the token</li>
+<li>Include token in our hidden API requests</li>
 </ol>
 <p>We can achieve this in few lines of Python code:</p>
 <details><summary>In ScrapFly SDK</summary>
