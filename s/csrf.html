@@ -9,8 +9,8 @@
   <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
   <script src="https://unpkg.com/mustache@latest"></script>
   
-    <title>Product </title>
-    
+<title>Hello</title>
+
 </head>
 <body>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -69,11 +69,71 @@
 </nav>
   <div class="container content">
   
-    <article class="box product">
-        <h3><a href="http://granitosaur.us/scrapeground//product/shoes-1.html">Comfy Shoes 3000</a></h3>
-        <div class="price">33.44</div>
-        <div class="short-description">The Comfy Shoes 3000 is an updated version of the good ol' classic 2000's version. Loved by many - wanted by everybody.</div>
-    </article>
+<div class="box">
+<h1>CSRF Token Scenario</h1>
+<p>This scenario illustrates example when csrf token is used to confirm that background requests (XHR) 
+    are coming from the same client.</p>
+<p>To illustrate this let's take a look at this example csrf-enabled search system:</p>
+<div class="post-form box">
+    <h4>Example Search Page</h4>
+    <input class="input" placeholder="enter search query" name="search">
+    <button class="button" hx-post="/s/csrf/protected" hx-target="#results" hx-headers='{"x-csrf-token": "1234abcd"}'>Search</button>
+    <h4>results:</h4>
+    <pre id="results"></pre>
+</div>
+<p>If we click "search" and take a look at the <b>Devtools Network</b> tab of our devtools we can see that this request sent an <code>x-csrf-token</code> header:</p>
+<img src="/static/media/csrf-inspector.webp">
+<p>When scraping this hidden API without csrf token we'd receive a 403 response:</p>
+<details><summary>In ScrapFly SDK</summary>
+</pre>
+</details>
+<h2>Where to find CSRF tokens?</h2>
+<p>Csrf tokens are usually hidden in any publically reachable HTML page. Like <code>input</code> node:</p>
+<pre>&lt;input type=&quot;hidden&quot; name=&quot;csrf-token&quot; value=&quot;1234abcd&quot;/&gt;</pre>
+<p>take a look at the page source of this page to find this token below 👇</p>
+<input type="hidden" name="csrf-token" value="" />
+<p>To replicate this behavior in our scraper we need to:</p>
+<ol>
+    <li>Retrieve HTML page with hidden token (this page)</li>
+    <li>Parse the html and find the token</li>
+    <li>Include token in our hidden API requests</li>
+</ol>
+<p>We can achieve this in few lines of Python code:</p>
+<details><summary>In ScrapFly SDK</summary>
+
+<pre>
+from scrapfly import ScrapflyClient, ScrapeConfig
+
+client = ScrapflyClient(key="your key")
+# get HTML page and extract csrf token:
+result_html = client.scrape(ScrapeConfig(
+    url="http://localhost:8000/csrf",
+))
+token = result_html.selector.css('input[name=csrf-token]::attr(value)').get()
+# get API response using found token:
+result_api = client.scrape(ScrapeConfig(
+    url="http://localhost:8000/csrf/protected",
+    headers={"x-csrf-token": "token"},
+))
+
+</pre>
+</details>
+<details><summary>In Python <code>requests</code></summary>
+
+<pre>
+import httpx
+from parsel import Selector
+
+response = httpx.get("http://localhost:8000/csrf")
+selector = Selector(text=response.text)
+token = selector.css('input[name=csrf-token]::attr(value)').get()
+api_response = httpx.get(
+    "http://localhost:8000/csrf/protected", 
+    headers={"x-csrf-token": token},
+)
+</pre>
+</details>
+</div>
 
   </div>
 </body>
